@@ -1,0 +1,21 @@
+language: python
+
+python:
+    - 3.3
+    - 3.4
+    - 3.5
+
+install:
+    # Numpy and Cython must be installed before installing cyvcf2
+    # Workaround: install each line/module sequentially
+    - xargs -L 1 pip install < requirements.txt
+    - pip install -r test-requirements.txt
+
+script:
+    coverage run --source=morinkit --module pytest
+
+after_success:
+    coveralls
+
+notifications:
+    email: false
