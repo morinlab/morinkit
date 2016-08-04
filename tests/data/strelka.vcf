@@ -1,0 +1,90 @@
+##fileformat=VCFv4.1
+##source=strelka
+##source_version=2.0.17.strelka1
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##contig=<ID=chrM,length=16569>
+##FILTER=<ID=BCNoise,Description="Average fraction of filtered basecalls within 50 bases of the indel exceeds 0.3">
+##FILTER=<ID=BCNoise,Description="Fraction of basecalls filtered at this site in either sample is at or above 0.4">
+##FILTER=<ID=DP,Description="Greater than 3.0x chromosomal mean depth in Normal sample">
+##FILTER=<ID=iHpol,Description="Indel overlaps an interrupted homopolymer longer than 14x in the reference sequence">
+##FILTER=<ID=QSI_ref,Description="Normal sample is not homozygous ref or sindel Q-score < 30, ie calls with NT!=ref or QSI_NT < 30">
+##FILTER=<ID=QSS_ref,Description="Normal sample is not homozygous ref or ssnv Q-score < 15, ie calls with NT!=ref or QSS_NT < 15">
+##FILTER=<ID=Repeat,Description="Sequence repeat of more than 8x in the reference sequence">
+##FILTER=<ID=SpanDel,Description="Fraction of reads crossing site with spanning deletions in either sample exceeeds 0.75">
+##INFO=<ID=IC,Number=1,Type=Integer,Description="Number of times RU repeats in the indel allele">
+##INFO=<ID=IHP,Number=1,Type=Integer,Description="Largest reference interrupted homopolymer length intersecting with the indel">
+##INFO=<ID=NT,Number=1,Type=String,Description="Genotype of the normal in all data tiers, as used to classify somatic variants. One of {ref,het,hom,conflict}.">
+##INFO=<ID=OVERLAP,Number=0,Type=Flag,Description="Somatic indel possibly overlaps a second indel.">
+##INFO=<ID=QSI,Number=1,Type=Integer,Description="Quality score for any somatic variant, ie. for the ALT haplotype to be present at a significantly different frequency in the tumor and normal">
+##INFO=<ID=QSI_NT,Number=1,Type=Integer,Description="Quality score reflecting the joint probability of a somatic variant and NT">
+##INFO=<ID=QSS,Number=1,Type=Integer,Description="Quality score for any somatic snv, ie. for the ALT allele to be present at a significantly different frequency in the tumor and normal">
+##INFO=<ID=QSS_NT,Number=1,Type=Integer,Description="Quality score reflecting the joint probability of a somatic variant and NT">
+##INFO=<ID=RC,Number=1,Type=Integer,Description="Number of times RU repeats in the reference allele">
+##INFO=<ID=RU,Number=1,Type=String,Description="Smallest repeating sequence unit in inserted or deleted sequence">
+##INFO=<ID=SGT,Number=1,Type=String,Description="Most likely somatic genotype excluding normal noise states">
+##INFO=<ID=SOMATIC,Number=0,Type=Flag,Description="Somatic mutation">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">
+##INFO=<ID=TQSI,Number=1,Type=Integer,Description="Data tier used to compute QSI">
+##INFO=<ID=TQSI_NT,Number=1,Type=Integer,Description="Data tier used to compute QSI_NT">
+##INFO=<ID=TQSS,Number=1,Type=Integer,Description="Data tier used to compute QSS">
+##INFO=<ID=TQSS_NT,Number=1,Type=Integer,Description="Data tier used to compute QSS_NT">
+##FORMAT=<ID=AU,Number=2,Type=Integer,Description="Number of 'A' alleles used in tiers 1,2">
+##FORMAT=<ID=CU,Number=2,Type=Integer,Description="Number of 'C' alleles used in tiers 1,2">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read depth for tier1 (used+filtered)">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read depth for tier1">
+##FORMAT=<ID=DP2,Number=1,Type=Integer,Description="Read depth for tier2">
+##FORMAT=<ID=DP50,Number=1,Type=Float,Description="Average tier1 read depth within 50 bases">
+##FORMAT=<ID=FDP,Number=1,Type=Integer,Description="Number of basecalls filtered from original read depth for tier1">
+##FORMAT=<ID=FDP50,Number=1,Type=Float,Description="Average tier1 number of basecalls filtered from original read depth within 50 bases">
+##FORMAT=<ID=GU,Number=2,Type=Integer,Description="Number of 'G' alleles used in tiers 1,2">
+##FORMAT=<ID=SDP,Number=1,Type=Integer,Description="Number of reads with deletions spanning this site at tier1">
+##FORMAT=<ID=SUBDP,Number=1,Type=Integer,Description="Number of reads below tier1 mapping quality threshold aligned across this site">
+##FORMAT=<ID=SUBDP50,Number=1,Type=Float,Description="Average number of reads below tier1 mapping quality threshold aligned across sites within 50 bases">
+##FORMAT=<ID=TAR,Number=2,Type=Integer,Description="Reads strongly supporting alternate allele for tiers 1,2">
+##FORMAT=<ID=TIR,Number=2,Type=Integer,Description="Reads strongly supporting indel allele for tiers 1,2">
+##FORMAT=<ID=TOR,Number=2,Type=Integer,Description="Other reads (weak support or insufficient indel breakpoint overlap) for tiers 1,2">
+##FORMAT=<ID=TU,Number=2,Type=Integer,Description="Number of 'T' alleles used in tiers 1,2">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NORMAL	TUMOR
+chrY	20280703	.	G	C	.	PASS	NT=ref;QSS=19;QSS_NT=19;SGT=GG->CG;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	18:0:0:0:0,0:0,0:18,18:0,0	69:0:0:0:0,0:15,17:54,55:0,0
+chr5	178790177	.	G	A	.	PASS	NT=ref;QSS=59;QSS_NT=59;SGT=GG->AG;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	41:3:0:0:0,0:0,0:38,42:0,0	48:5:0:0:17,21:0,0:26,27:0,0
+chr6	112940169	.	G	C	.	PASS	NT=ref;QSS=53;QSS_NT=53;SGT=GG->CG;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	41:0:0:0:0,0:0,0:41,43:0,0	105:2:0:0:0,0:30,31:73,74:0,0
+chrX	108318952	.	G	A	.	PASS	NT=ref;QSS=58;QSS_NT=57;SGT=GG->AG;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	25:0:0:0:0,0:0,0:25,25:0,0	40:0:0:0:30,30:0,0:10,10:0,0
+chr1	164591291	.	C	T	.	PASS	NT=ref;QSS=73;QSS_NT=73;SGT=CC->CT;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	40:1:0:0:0,0:39,41:0,0:0,0	76:2:0:0:0,0:42,45:0,0:32,33
+chr4	146104227	.	C	G	.	PASS	NT=ref;QSS=18;QSS_NT=18;SGT=CC->CG;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	23:1:1:0:2,2:20,36:0,0:0,0	59:4:2:0:2,2:42,65:11,14:0,0
+chr17	21831379	.	G	A	.	PASS	NT=ref;QSS=17;QSS_NT=17;SGT=GG->AG;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	56:0:0:0:0,2:0,0:56,60:0,0	131:0:0:0:6,10:0,0:125,131:0,0
+chr2	232430797	.	T	G	.	PASS	NT=ref;QSS=69;QSS_NT=69;SGT=TT->GT;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	39:1:0:0:0,0:0,0:0,0:38,39	67:4:0:0:0,0:0,0:31,37:32,33
+chrX	4342554	.	G	T	.	PASS	NT=ref;QSS=15;QSS_NT=15;SGT=GG->GT;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	16:0:0:0:0,0:0,0:16,17:0,0	30:0:0:0:0,0:0,0:11,11:19,19
+chr18	69727050	.	T	A	.	PASS	NT=ref;QSS=61;QSS_NT=61;SGT=TT->AT;SOMATIC;TQSS=1;TQSS_NT=1	DP:FDP:SDP:SUBDP:AU:CU:GU:TU	34:0:0:0:0,0:0,0:0,0:34,35	69:0:0:0:27,27:2,2:0,0:40,41
+chr11	109631440	.	AT	A	.	PASS	IC=4;IHP=7;NT=ref;QSI=63;QSI_NT=63;RC=5;RU=T;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	38:38:36,36:0,0:0,0:36.15:0.07:0.00	100:100:56,56:36,37:7,8:102.58:0.12:0.00
+chr7	57658052	.	TA	T	.	PASS	IC=7;IHP=8;NT=ref;QSI=71;QSI_NT=71;RC=8;RU=A;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	47:47:42,42:0,0:4,4:45.83:0.00:0.00	77:77:43,44:29,30:5,5:76.57:0.00:0.00
+chr4	155241122	.	T	TA	.	PASS	IC=9;IHP=9;NT=ref;QSI=62;QSI_NT=62;RC=8;RU=A;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	51:51:45,47:0,0:6,5:53.1:0.00:0.00	102:102:59,59:30,30:12,12:102.55:0.00:0.00
+chr5	24706719	.	TA	T	.	PASS	IC=7;IHP=9;NT=ref;QSI=47;QSI_NT=47;RC=8;RU=A;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	37:37:35,36:0,0:3,2:39.19:0.32:0.00	80:80:51,51:24,24:4,4:80.72:0.00:0.00
+chr2	117042424	.	A	ATACTCTATTGTAC	.	PASS	IC=1;IHP=2;NT=ref;QSI=33;QSI_NT=33;RC=0;RU=TACTCTATTGTAC;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	69:69:67,71:0,0:2,2:74.39:0.01:0.00	151:151:137,150:5,5:10,9:160.54:1.99:0.00
+chr3	83524805	.	AG	A	.	PASS	IC=0;IHP=10;NT=ref;QSI=76;QSI_NT=76;RC=1;RU=G;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	55:55:51,53:0,0:4,4:51.78:1.10:0.00	88:88:50,51:29,29:8,8:88.41:1.90:0.00
+chr5	86077477	.	CT	C	.	PASS	IC=7;IHP=10;NT=ref;QSI=69;QSI_NT=69;RC=8;RU=T;SGT=ref->het;SOMATIC;TQSI=2;TQSI_NT=2	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	46:46:44,44:0,0:2,3:48.46:0.42:0.00	118:118:67,68:38,38:14,14:113.62:0.89:0.00
+chr2	102331680	.	AAGAC	A	.	PASS	IC=1;IHP=4;NT=ref;QSI=44;QSI_NT=44;RC=2;RU=AGAC;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	41:41:41,43:0,0:1,1:40.94:0.00:0.00	84:84:53,54:19,21:11,9:76.9:1.51:0.00
+chr1	237016491	.	C	CT	.	PASS	IC=7;IHP=7;NT=ref;QSI=78;QSI_NT=78;RC=6;RU=T;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	48:48:44,46:0,0:4,4:46.13:0.42:0.00	97:97:49,49:35,35:13,14:91.82:0.48:0.00
+chr6	97908940	.	T	TA	.	PASS	IC=1;IHP=9;NT=ref;QSI=40;QSI_NT=40;RC=0;RU=A;SGT=ref->het;SOMATIC;TQSI=1;TQSI_NT=1	DP:DP2:TAR:TIR:TOR:DP50:FDP50:SUBDP50	37:37:35,35:0,0:2,2:40.88:0.85:0.00	76:76:44,45:15,17:16,14:83.53:2.33:0.00
