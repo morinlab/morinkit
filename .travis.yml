@@ -1,21 +1,28 @@
 language: python
 
 python:
-    - 3.3
-    - 3.4
-    - 3.5
+- 3.3
+- 3.4
+- 3.5
 
 install:
-    # Numpy and Cython must be installed before installing cyvcf2
-    # Workaround: install each line/module sequentially
-    - xargs -L 1 pip install < requirements.txt
-    - pip install -r test-requirements.txt
+- xargs -L 1 pip install < requirements.txt
+- pip install -r requirements-tests.txt
 
-script:
-    coverage run --source=morinkit --module pytest
+script: py.test --cov=morinkit --pep8 tests
 
-after_success:
-    coveralls
+after_success: codecov
 
 notifications:
-    email: false
+  email: false
+
+deploy:
+  provider: pypi
+  user: morinlab
+  password:
+    secure: K64pt9cH8VZ2OhOMsD6qTs7HLCTSEOy586stpvQiKQ4uBH/csoJRQ5C+Zzt+gT3RBzrSzzu2L3wnNE1RgrHxh1XLkEUDMEczWhlvzS9R3KLKklnIA0hm7qbYbAzXPmIdj7dIY3z+jbbZe45mX35GR8WND4m+gbnikeSqA6Ycs3ny2RHcl/OFtyceSbEgKKEFYr4NG4ELML3Nmrft3TN6hXQ1AoePYAm5hUl40YpoXgfslI7fx85dB62zA1HhoSVAqwEH9X5ZXbZOkB4IG4hmua0kYkB6wCsGe80j3Pq58+GVl+bEwR+dXS+PLLgQaLze+YEHOlGru5njlkcte6lUlaEUNjq7/Gc7IoSRqC5a1vp58UghhBNzxWyL2W0QQjApK6AdSHP+fkRYOFhT9p4kbAxPyJY/iGy8bM0/eJl6HAqIsWmJdw/zXQ4NZvng8CszQIUy4ViwXPxgkamAo6e5weTFZVhkd/LLiDSaMNvEtCjgOw7sxMycWfpswGEkPMtZ3shCVHvq8HeruZO2SE8sqfvR55Y186epOGatESadI9oL48B8n7SJ0NFrDHKwmr+tphj1eaf8Ia2R94Asg9PV2cTT2xObpZ1cxegIV1OJL2VXIAxDUnf8irZXFC4K6ukSsZW0VA9U/sxzgu2+rQMtRz0Kc2phK6o9t1x28oQc0c4=
+  on:
+    tags: true
+    repo: morinlab/morinkit
+    branch: master
+  distributions: sdist bdist_wheel
