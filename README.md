@@ -1,7 +1,8 @@
 # Morinkit: Python functions and scripts for genomics
 
-[![Build Status](https://travis-ci.org/morinlab/morinkit.svg?branch=master)](https://travis-ci.org/morinlab/morinkit)
-[![Coverage Status](https://coveralls.io/repos/github/morinlab/morinkit/badge.svg?branch=master)](https://coveralls.io/github/morinlab/morinkit?branch=master)
+[![PyPI](https://img.shields.io/pypi/v/morinkit.svg)](https://pypi.python.org/pypi/morinkit)
+[![Build Status](https://img.shields.io/travis/morinlab/morinkit/master.svg)](https://travis-ci.org/morinlab/morinkit)
+[![Coverage Status](https://img.shields.io/codecov/c/github/morinlab/morinkit/master.svg)](https://codecov.io/gh/morinlab/morinkit/branch/master)
 
 ## Installation
 
