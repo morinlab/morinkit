@@ -11,7 +11,7 @@ install:
 
 script: py.test --cov=morinkit --pep8 tests
 
-after_success: coveralls
+after_success: codecov
 
 notifications:
   email: false
