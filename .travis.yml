@@ -9,7 +9,7 @@ install:
 - xargs -L 1 pip install < requirements.txt
 - pip install -r requirements-tests.txt
 
-script: coverage run --source=morinkit --module pytest
+script: py.test --cov=morinkit --pep8 tests
 
 after_success: coveralls
 

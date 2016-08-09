@@ -1,8 +1,6 @@
-# -*- coding: ascii -*-
-
 """
 tests.utils_test
 ~~~~~~~~~~~~~~~~
 
-This module contains the test suite for morinkit.utils.
+This modules contains tests that target the morinkit.utils module.
 """

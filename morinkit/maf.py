@@ -1,5 +1,3 @@
-# -*- coding: ascii -*-
-
 """
 morinkit.maf
 ~~~~~~~~~~~~

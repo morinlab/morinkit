@@ -1,8 +1,10 @@
-# -*- coding: ascii -*-
-
 """
 tests.ui_test
 ~~~~~~~~~~~~~
 
-This module contains the test suite for morinkit.ui.
+This modules contains tests that target the morinkit.ui module.
 """
+
+
+def test_parse_args():
+    pass

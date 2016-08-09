@@ -1,8 +1,6 @@
-# -*- coding: ascii -*-
-
 """
 tests
 ~~~~~
 
-This package contains test suites for the morinkit package.
+This package contains tests for the morinkit package.
 """

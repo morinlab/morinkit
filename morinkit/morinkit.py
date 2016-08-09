@@ -1,5 +1,3 @@
-# -*- coding: ascii -*-
-
 """
 morinkit.morinkit
 ~~~~~~~~~~~~~~~~~
@@ -11,10 +9,10 @@ import sys
 import logging
 from .ui import parse_args
 from .utils import config_logging
-from . import calc, process
+from . import convert, process, summarize
 from .exceptions import NotUniqueError
 
-MODULES = [calc, process]
+MODULES = [convert, process, summarize]
 
 
 def find_func(name, modules=MODULES):

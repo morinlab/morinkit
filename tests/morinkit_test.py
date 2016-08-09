@@ -1,8 +1,14 @@
-# -*- coding: ascii -*-
-
 """
 tests.morinkit_test
 ~~~~~~~~~~~~~~~~~~~
 
-This module contains the test suite for morinkit.morinkit.
+This modules contains tests that target the morinkit.morinkit module.
 """
+
+
+def test_find_func():
+    pass
+
+
+def test_main():
+    pass

@@ -1,8 +1,6 @@
-# -*- coding: ascii -*-
-
 """
 tests.maf_test
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
-This module contains the test suite for morinkit.maf.
+This modules contains tests that target the morinkit.maf module.
 """
