@@ -1,16 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
-from morinkit import __version__, __author__, __license__
+from morinkit import __version__, __author__, __license__, __url__
 
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-url = 'https://github.com/morinlab/morinkit'
-long_desc = 'For more information, visit the GitHub repository: {}'.format(url)
+long_desc = 'For more information, visit the GitHub repository: {}'.format(__url__)
 
 requires = read('requirements.txt').rstrip().split("\n")
 tests_requires = read('requirements-tests.txt').rstrip().split("\n")
@@ -19,10 +18,10 @@ tests_requires = read('requirements-tests.txt').rstrip().split("\n")
 setup(
     name='morinkit',
     version=__version__,
-    description='Python functions and scripts for genomics',
+    description='Python functions for cancer genomics',
     long_description=long_desc,
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Programming Language :: Python :: 3 :: Only',
@@ -33,9 +32,9 @@ setup(
     keywords='bioinformatics cancer genomics utility tool',
     author=__author__,
     author_email='morinlab@sfu.ca',
-    url=url,
+    url=__url__,
     license=__license__,
-    packages=find_packages(exclude=["tests"]),
+    packages='morinkit',
     entry_points={'console_scripts': ['morinkit = morinkit.morinkit:main']},
     install_requires=requires,
     test_suite='tests',
