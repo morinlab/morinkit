@@ -1,26 +1,20 @@
 language: python
-
 python:
 - 3.3
 - 3.4
 - 3.5
-
 install:
 - xargs -L 1 pip install < requirements.txt
 - pip install -r requirements-tests.txt
-
 script: py.test --cov=morinkit --pep8 tests
-
 after_success: codecov
-
 notifications:
   email: false
-
 deploy:
   provider: pypi
   user: morinlab
   password:
-    secure: K64pt9cH8VZ2OhOMsD6qTs7HLCTSEOy586stpvQiKQ4uBH/csoJRQ5C+Zzt+gT3RBzrSzzu2L3wnNE1RgrHxh1XLkEUDMEczWhlvzS9R3KLKklnIA0hm7qbYbAzXPmIdj7dIY3z+jbbZe45mX35GR8WND4m+gbnikeSqA6Ycs3ny2RHcl/OFtyceSbEgKKEFYr4NG4ELML3Nmrft3TN6hXQ1AoePYAm5hUl40YpoXgfslI7fx85dB62zA1HhoSVAqwEH9X5ZXbZOkB4IG4hmua0kYkB6wCsGe80j3Pq58+GVl+bEwR+dXS+PLLgQaLze+YEHOlGru5njlkcte6lUlaEUNjq7/Gc7IoSRqC5a1vp58UghhBNzxWyL2W0QQjApK6AdSHP+fkRYOFhT9p4kbAxPyJY/iGy8bM0/eJl6HAqIsWmJdw/zXQ4NZvng8CszQIUy4ViwXPxgkamAo6e5weTFZVhkd/LLiDSaMNvEtCjgOw7sxMycWfpswGEkPMtZ3shCVHvq8HeruZO2SE8sqfvR55Y186epOGatESadI9oL48B8n7SJ0NFrDHKwmr+tphj1eaf8Ia2R94Asg9PV2cTT2xObpZ1cxegIV1OJL2VXIAxDUnf8irZXFC4K6ukSsZW0VA9U/sxzgu2+rQMtRz0Kc2phK6o9t1x28oQc0c4=
+    secure: O2xM9EFnEvf+lU6QFAKHSi9i/xXsTOX+UDYbrk8nTzKR6XvU2HbhSHHWEUOcH+XqjmkT736OzNASCEVp0xByzOF8Y5/4nTj1G6Fj5/EDzpi+KwYcOzErM/IfFgHWenmbwfVigdRsC7BxObVAAcfjyfogczTYU7iw9YbCFpx8Gy2RTGL80YuZyqmMkcEZl4xaOHSQQxaXRy0PHpMXS7RMWSWfA4IRZkkqn0Hv7Vn64nQ+tbLJaxl/fU+C+73THukkodsxf8F9FyjHTgM+5dWnpZRPyiW6Bx2UFF0IoICJxu1r8P4AB8pnjBvN4QSlEnpwVJzmwctJDkB5nJrsp2z4MTFQbHuPA8c0/3C+HNS9N0cAjneaB8GF78zaEjoZj6nstd9McsPyrvuHg+nOU3vuFUJAo+Aa6vEMmWldISs5/f9E6m6Vb1AeAGel6HziiYzP2c+Rhe05UPoYSo8eE95LVmepvoP3smij0aAKd3lFV+KQ2mJHhK58+kDP4I4VhwQkPcG4BE8NbcoYOwV0iLZrzVyI/y4tBEzz5tRMbijzTlLVMwFBi0+NQohjwATRGTCfud1bZPEof5tHZPRjWH2XlDRtmsq5Tn4FaxNv5dJzgLU7RKWd+CIrQiUPOy5tdkp2ne3+73WEOkcNbZtzw0tpBgBhhIkULFrIpLapOdgE08k=
   on:
     tags: true
     repo: morinlab/morinkit

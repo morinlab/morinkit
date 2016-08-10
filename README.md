@@ -1,8 +1,8 @@
 # Morinkit: Python functions for cancer genomics
 
-[![PyPI](https://img.shields.io/pypi/v/morinkit.svg)](https://pypi.python.org/pypi/morinkit)
-[![Build Status](https://img.shields.io/travis/morinlab/morinkit/master.svg)](https://travis-ci.org/morinlab/morinkit)
-[![Coverage Status](https://img.shields.io/codecov/c/github/morinlab/morinkit/master.svg)](https://codecov.io/gh/morinlab/morinkit/branch/master)
+[![PyPI](https://badge.fury.io/py/morinkit.svg)](https://pypi.python.org/pypi/morinkit)
+[![Build Status](https://travis-ci.org/morinlab/morinkit.svg?branch=master)](https://travis-ci.org/morinlab/morinkit)
+[![Coverage Status](https://codecov.io/gh/morinlab/morinkit/branch/master/graph/badge.svg)](https://codecov.io/gh/morinlab/morinkit/branch/master)
 
 Morinkit is a Python package that bundles several functions meant for cancer genomics. Examples include:
 
