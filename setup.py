@@ -34,7 +34,7 @@ setup(
     author_email='morinlab@sfu.ca',
     url=__url__,
     license=__license__,
-    packages='morinkit',
+    packages=['morinkit'],
     entry_points={'console_scripts': ['morinkit = morinkit.morinkit:main']},
     install_requires=requires,
     test_suite='tests',
