@@ -180,8 +180,8 @@ class OutputVCF:
         elif isinstance(field, cyvcf2_INFO):
             infos = [cls.info_to_string(key, val) for key, val in field]
             result = ';'.join(infos)
-        elif isinstance(field, list):
-            result = ','.join(field)
+        elif isinstance(field, (list, tuple)):
+            result = ','.join(str(f) for f in field)
         elif isinstance(field, int):
             result = str(field)
         elif isinstance(field, float):
