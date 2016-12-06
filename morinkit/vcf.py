@@ -37,8 +37,10 @@ def get_key(vcf_record):
         vcf_record: cyvcf2 VCF record.
 
     Returns:
-        Tuple of VCF attributes.
+        Tuple of VCF attributes or None if no ALT alleles are specified.
     """
+    if len(vcf_record.ALT) == 0:
+        return None
     return (vcf_record.CHROM, vcf_record.POS, vcf_record.REF, vcf_record.ALT[0])
 
 
@@ -58,6 +60,8 @@ def create_vcf_iterator(vcf_readers):
     for i, vcf in enumerate(vcf_readers):
         for record in vcf:
             key = get_key(record)
+            if key is None:
+                continue
             index[key][i] = record
     for key, val in index.items():
         yield val
@@ -94,7 +98,11 @@ def create_vcf_walktogether(vcf_readers):
         next_idx_to_k = {}
         for i, record in enumerate(nexts):
             if record is not None:
-                next_idx_to_k[i] = get_key(record)
+                key = get_key(record)
+                if key is None:
+                    continue
+                else:
+                    next_idx_to_k[i] = key
 
         keys_with_prev_contig = []
         for k in next_idx_to_k.values():
@@ -172,8 +180,8 @@ class OutputVCF:
         elif isinstance(field, cyvcf2_INFO):
             infos = [cls.info_to_string(key, val) for key, val in field]
             result = ';'.join(infos)
-        elif isinstance(field, list):
-            result = ','.join(field)
+        elif isinstance(field, (list, tuple)):
+            result = ','.join(str(f) for f in field)
         elif isinstance(field, int):
             result = str(field)
         elif isinstance(field, float):
